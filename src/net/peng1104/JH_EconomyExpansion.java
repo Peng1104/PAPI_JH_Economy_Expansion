@@ -24,7 +24,7 @@ public class JH_EconomyExpansion extends PlaceholderExpansion {
 	
 	@Override
 	public String getIdentifier() {
-		return "jh_economyexpansion";
+		return "jheconomyexpansion";
 	}
 	
 	@Override
@@ -34,7 +34,7 @@ public class JH_EconomyExpansion extends PlaceholderExpansion {
 	
 	@Override
 	public String getVersion() {
-		return "1.0.0";
+		return "1.0.1";
 	}
 	
 	@Override
@@ -44,7 +44,7 @@ public class JH_EconomyExpansion extends PlaceholderExpansion {
 	
 	@Override
 	public List<String> getPlaceholders() {
-		return Arrays.asList("%jh_economyexpansion_magnata%", "%jh_economyexpansion_tag%");
+		return Arrays.asList("%jheconomyexpansion_magnata%", "%jheconomyexpansion_tag%");
 	}
 	
 	@Override
@@ -62,6 +62,8 @@ public class JH_EconomyExpansion extends PlaceholderExpansion {
 		if (identifier.equalsIgnoreCase("magnata")) {
 			return API.getMagnata();
 		}
+		if (player == null) return "";
+		
 		if (identifier.equalsIgnoreCase("tag") && (player.getName().equals(API.getMagnata()))) {
 			return Main.getInstace().getConfig().getString("Magnata.tag");
 		}
